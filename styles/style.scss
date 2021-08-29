@@ -30,11 +30,15 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+
+  background: url(../images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: top;
   background-color: $pale-blue;
 }
 
 .card {
-  width: 32rem;
+  max-width: 34rem;
   background-color: #fff;
   border-radius: 1rem;
   overflow: hidden;
@@ -126,5 +130,26 @@ body {
         }
       }
     }
+  }
+}
+.attribution {
+  margin-top: 2rem;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    background: url(../images/pattern-background-mobile.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: $pale-blue;
+  }
+  .card {
+    width: 30rem;
   }
 }
