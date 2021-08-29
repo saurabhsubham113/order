@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap");
+
+$pale-blue: hsl(225, 100%, 94%);
+$Bright-blue: hsl(245, 75%, 52%);
+
+$Very-pale-blue: hsl(225, 100%, 98%);
+$Desaturated-blue: hsl(224, 23%, 55%);
+$Dark-blue: hsl(223, 47%, 23%);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+p {
+  color: $Desaturated-blue;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $pale-blue;
+}
+
+.card {
+  width: 32rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  &-top {
+    img {
+      width: 100%;
+    }
+  }
+
+  &-main {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2rem;
+
+    .card-body {
+      text-align: center;
+
+      .card-title {
+        color: $Dark-blue;
+      }
+      .card-desc {
+        margin: 1rem 0;
+      }
+    }
+  }
+  &-plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $Very-pale-blue;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+
+    .plan-container {
+      display: flex;
+      align-items: stretch;
+      .plan {
+        margin-left: 1rem;
+        &-name {
+          color: $Dark-blue;
+        }
+      }
+    }
+
+    .change-plan {
+      color: $Bright-blue;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+        color: rgba($Bright-blue, 0.8);
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    flex-direction: column;
+    // Select and style the first child element of every <btn> element
+    & > :first-child {
+      margin: 1rem 0;
+    }
+    .btn {
+      padding: 1rem;
+      border-radius: 1rem;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+
+      &.cta {
+        background-color: $Bright-blue;
+        color: #fff;
+        box-shadow: $Bright-blue 0px 1.5rem 3rem -1rem;
+
+        &:hover {
+          box-shadow: rgba($Bright-blue, 0.8) 0px 1.5rem 3rem -1rem;
+          background-color: rgba($Bright-blue, 0.8);
+        }
+      }
+      &.cancel {
+        background-color: transparent;
+        color: $Desaturated-blue;
+        &:hover {
+          color: $Dark-blue;
+        }
+      }
+    }
+  }
+}
